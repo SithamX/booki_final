@@ -1,0 +1,993 @@
+/* ÉLÉMENTS PRINCIPAUX DE LA PAGE */
+
+
+
+body
+{
+    font-family: 'Raleway', "Century Gothic", helvetica, arial, sans-serif;
+    padding: 0 3em; /*avant il y avait 2em */
+    max-width: 1304px; /* je mets 1334px au lieu de 1400px parce que le padding de 2em rallonge la largeur de la page quand elle est en 1400px, au total ça fait quelque chose comme 1470px, donc j'ai réduit.Et je peux vérifier la largeur de  la page sur l'inspecteur d'élément chrome. Faire ça m'a permis de reduire l'énorme espace entre l'article hebergements et les plus populaires */ 
+    margin: auto;
+}
+
+h1
+{
+    font-size: 22px;
+}
+
+h2
+{
+    font-size: 18px;   
+}
+
+h3
+{
+    font-size: 17px;
+}
+
+p
+{
+    font-size: 16px;
+}
+
+
+
+/* HEADER */
+
+
+#navbar
+{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo > img
+{
+    width: 61.09px;
+    height: 19px;
+    margin-top: 30px;
+    margin-left: 5px;
+}
+
+#nav_tabs
+{
+    font-size: 0;
+}
+
+#nav_tabs a
+{
+    display: inline-block;
+}
+
+#nav_tabs a:hover 
+{
+    border-top: 2px solid #0065FC;
+    color: #0065FC;
+    margin-top: -2px; /* C'est pour éviter que les cellules ne se déclalent vers les bas quand le curseur est dessus ("à cause" du border de 2 px en bleu) */
+}
+
+#nav_tabs a:focus
+{
+    border-top: 2px solid #0065FC;
+}
+
+.nav_tabs_cellules
+{
+    font-size: 16px;/* Avant il y avait juste margin-left: -5px c'était bien mais ça créait un décalage visible avec une border black sur la nav tabs et nav tabs cellules ce qui pose problème pour la version mobile si on veut faire quelque chose de parfait. C'est pour enlever l'espace entre les deux cellules. C'est proposé ici et une autre solution est donnée (mettre une font-size de 0 à la nav tabs puis mettre une font_size qui correspond à celle choisie pour les paragraphes (donc 16px) : https://fr.w3docs.com/snippets/css/comment-supprimer-lespace-entre-les-elements-de-niveau-inline.html  */
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    width: 162px;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 2px; /* C'est également là-aussi pour éviter que les cellules ne se déclalent vers les bas quand le curseur est dessus ("à cause" du border de 2 px en bleu) */
+}
+
+
+
+/* SECTION UNE */
+
+
+#titre_section_une
+{
+    margin-top: 20px; 
+    margin-bottom: 0px;
+}
+
+#paragraphe_section_une
+{
+    margin-top: 8px;
+}
+
+#formulaire_de_recherche
+{
+    margin-top: 0px;
+}
+
+#formulaire_de_recherche_2
+{
+    display: none;
+}
+
+input
+{
+   height: 49px;
+   border-color: rgba(0, 0, 0, 0);
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.rechercher
+{
+    border-radius: 0px 15px 15px 0px;
+    padding: 15px, 16px, 15px, 16px;
+    background-color: #0065FC;
+    color: #ffffff;
+    width: 132px;   
+}
+
+.rechercher_2
+{
+    border-radius: 0px 15px 15px 0px;
+    width: 50px;
+    background-color: #0065FC;
+    color: #ffffff;
+    border: none;
+}
+
+.localisation
+{
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 15px 0px 0px 15px;
+    padding: 15px 18px 14px 19px;
+    background-color: #F2F2F2;
+}
+
+.marseille
+{
+    width: 200px;
+}
+
+form
+{
+    display: flex;
+    width: 400px;
+    margin-left: 5px;
+}
+
+#input
+{
+    border: 1px solid #F2F2F2;
+    border-radius: 15px 0px 0px 15px;
+    border-right-style: none;
+    border-left-style: none;
+}
+
+
+
+/* FILTRES DE LA SECTION UNE */
+
+
+#div_filtres
+{
+    display: flex;
+    align-items: center;
+    width: 850px;;
+    height: auto;
+    margin-left: 12px; /* je n'ai pas mis 5px comme pour le titre de cette section parce que sur la maquette, leur margin-left ne semble pas être la même */
+    margin-top: 20px;
+}
+
+#div_filtres h2
+{
+    margin-right: 32px;
+}
+
+#filtres_flex
+{
+    width: 830px; /*c'est a cause de ça que j'ai une barre de défilement horizontale en bas du navigateur */
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filtre
+{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    border: 2px solid #D9D9D9;
+    border-radius: 30px;
+    height: 40px;
+    margin: 10px 0;
+   
+}
+
+.filtre:hover
+{
+    background-color: #DEEBFF;
+}
+
+.filtre > i
+{
+    color: #0065FC;
+    display: flex;
+    align-items: center;
+    padding: 16.61px 5px 16.61px 15px;
+    font-size: 22px;
+}
+
+.filtre > h3
+{
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+    padding-left: 10px;
+}
+
+.filtre_a > a
+{
+    color: black;
+    text-decoration: none;
+}
+
+#information
+{
+    margin-top: 25px;
+    margin-left: 19px;
+    display: flex;
+}
+
+#information > i
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #0065FC;   
+    border: 1px solid #D9D9D9; /* avant il y avait 2px d'épaisseur */
+    border-radius: 30px;
+    height: 20px;
+    width: 20px;
+    margin-top: 15px;
+    margin-right: 11px;
+}
+
+
+
+/* SECTION DEUX */
+
+
+#section_deux
+{
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#article_hebergements_marseille
+{
+    width: 67%;
+    height: auto;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    padding-top: 30px;
+    margin-top: 37px;
+}
+
+#h1_hebergements_marseille
+{
+    padding-left: 40px;
+    padding-top: 18px;
+    padding-bottom: 16px;
+    margin: 0;
+}
+
+#div_cards
+{
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+.div_ligne
+{
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.card_padding
+{
+    width: 100%; /* avant il y avait 300px, mais utant mettre la largeur max en décomptant le padding à l'intérreiur, la width et la weight correspondent à celles de figma et ça rentreparfaitement dans l'article ! ça se vérifie sur l'inspecteur d'éléments */
+    height: auto; /* avant il y avait 190px */
+    padding: 0 1em 2em 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.card
+{
+    padding: 0.3em;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    width: 100%; /* avant il y avait 29%, mais dans la configuraion actuelle, 32% correspond à 246.99px quand je vérifie sur l'inspecteur d'élément chrome, ce qui correspond presque à la dimension figma, donc esthétiquement le résultat semble bon */
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* je l'ai copié/collé sur le site W3Schools par le lien donné dans le "Guide d'étapes clés" */
+}
+
+.card img
+{
+    width: 100%;
+    height: 120px;
+    border-radius: 17px 17px 0px 0px;
+    object-fit: cover;
+}
+
+.card_informations
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 60px;
+    padding-left: 9px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.card_h3
+{
+    margin: 0px;
+}
+
+.card_p
+{
+    margin: 0px;
+}
+
+.card h3
+{
+    font-size: 16px;
+    margin: 0px;
+    padding-right: 9px;
+}
+
+.card p
+{
+    font-size: 14px;
+    margin: 0;
+    padding-right: 9px;
+}
+
+.div_star
+{
+    display: flex;
+    color: #0065FC;
+    font-size: 12px;
+    margin: 0;
+    padding: 3px 0; /* c'est pour que la div des étoiles ait des espaces en haut en en bas tout comme le h3 et le p en ont naturellement (et qui ne peuvent pas s'enlever). ça permet d'avoir un espacement homogène même dans la div information en space-between, sinon les étoiles sont plus près du paragraphe que le paragraphe du h3 */
+}
+
+.fa-star:nth-child(5)
+{
+    color: #F2F2F2;
+}
+
+
+#h2_afficher_plus
+{
+    margin: 20px 0px 40px 44px;
+}
+
+#h2_afficher_plus a
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+#h2_afficher_plus a:hover
+{
+    text-decoration: underline;
+}
+
+
+
+/* ASIDE HEBERGEMENTS POPULAIRES */
+
+
+#aside_populaires
+{
+    width: 30.5%; /* c'est pour que les cards soient un peu plus longues */
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    margin-top: 37px;
+    padding-top: 30px;
+}
+
+#titre_article_populaires
+{
+    margin: auto;
+    width: 86%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#h1_les_plus_populaires
+{
+    padding-right: 15px;
+}
+
+#titre_article_populaires > i
+{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: #0065FC;
+}
+
+#div_cards_v2
+{
+    margin-top: 0px;
+}
+
+.card_padding_v2
+{
+    padding: 0em 1.5em 2em 1.5em;
+    display: flex;
+}
+
+.card_v2
+{
+    padding: 0.3em;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card_v2 img
+{
+    width: 37%; /* avant il y avait 135px equivalent parfait des 137px en pourcentages */
+    height: 140px; /* avant il y avait 153 px et, encore avant il y avait 170px */
+    margin-top: auto; /* c'est pour centrer l'image */
+    margin-bottom: auto; /* parreil c'est pour centrer l'image */
+    border-radius: 17px 0px 0px 17px;
+    object-fit: cover;
+}
+
+.card_v2_texte
+{
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card_v2_texte h3
+{
+    margin: 0;
+    padding-top: 13px;
+    padding-right: 8px; /* avant il y avait 12px mais j'ai mis le même padding-right que pour les paragraphes ce qui me permet de réduire l'image pour réduire un peu la height des cards */
+}
+
+.card_v2_texte p
+{
+    margin: 0;
+    padding-top: 7px;
+    padding-right: 8px;
+}
+
+.div_star_v2
+{
+    display: flex;
+    color: #0065FC;
+    font-size: 12px;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.fa-star:nth-child(5)
+{
+    color: #F2F2F2;
+}
+
+.card_v2_a > a
+{
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+
+
+/* SECTION TROIS */
+
+
+#h1_section_activites
+{
+    margin-top: 50px;
+}
+
+#div_activites
+{
+    width: 100%; /* avant il y avait 1340px */
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card_v3
+{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card_v3 > img
+{
+    width: 100%;
+    height: 380px; /* avant il y avait 389px, j'ai mis 380 juste parce que je trouvais les cards trop larges (en height) */
+    border-radius: 20px 20px 0px 0px;
+    object-fit: cover;
+}
+
+.card_v3 > h3
+{
+    height: 60px;
+    margin: 0px 10px 0px 16px; /* la margin-right c'est pour le retour à la ligne */
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* FOOTER */
+
+
+footer
+{
+    background-color: #F2F2F2;
+    height: 230px;
+    margin-top: 61px;
+    display: flex;
+    align-items: center;
+}
+
+#div_footer_test
+{
+    width: 75%;
+    margin-left: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_ul:nth-child(-n+2)
+{
+    margin-right: 80px;
+}
+
+.footer_ul a
+{
+    color: black;
+    text-decoration: none;
+}
+
+.footer_ul ul
+{
+    padding: 0px;
+}
+
+.footer_ul li
+{
+    color: black;
+    list-style-type: none;
+    margin-top: 12px;
+    padding: 0px;
+}
+
+
+
+/* RESPONSIVE DESIGN : Media Queries */
+
+
+@media screen and (max-width: 992px)
+{
+    body
+    {
+        width: auto;
+    }
+
+    #formulaire_de_recherche
+    {
+        margin-left: 0px;
+    }
+
+    #div_filtres
+    {
+        width: auto;
+        margin-left: 0px;
+    }
+
+    #filtres_flex
+    {
+        justify-content: flex-start; /* pour annuler le space-between et remetre le comportement de base */
+        flex-wrap: wrap;
+    }
+
+    .filtre
+    {
+        margin-right: 15px;
+    }
+
+    #information
+    {
+        margin-left: 0px;
+    }
+
+    #section_deux
+    {
+        justify-content: flex-start; /* parce qu'il est en space-beetween donc je remet la propriété de base */
+        flex-direction: column;
+    }
+
+    #article_hebergements_marseille
+    {
+        width: auto;
+        margin-top: 20px;
+    }
+
+    #aside_populaires
+    {
+        width: auto;
+        padding-top: 15px;
+        padding-bottom: 30px;
+    }
+
+    #titre_article_populaires
+    {
+        width: 93%;
+    }
+
+    #div_cards_v2
+    {
+        display: flex;
+        flex-direction: row;
+        width: 93%;
+        height: 60%;
+        margin: auto;
+    }
+
+    .card_padding_v2
+    {
+        width: 100%;
+        padding: 0;
+    }
+
+    .card_v2
+    {
+        width: 90%;
+        margin: auto;
+    }
+
+    .card_v2_texte h3
+    {
+        font-size: 14px;
+    }
+
+    .card_v2_texte p
+    {
+        font-size: 13px;
+    }
+
+    .card_v2_texte
+    {
+        margin-left: 10px;
+    }
+
+    .card_v3
+    {
+        width: 22%;
+    }
+
+    .card_v3 img
+    {
+        width: auto;
+        height: 211px;
+    }
+
+    .card_v3 > h3 /* LE TEXTE DE LA CARD 4 VA PLUS LOIN QUE SUR LA MAQUETTE, PEUT-ETRE QUE JE DEVRAIS METTRE UN PADDING-RIGHT UNE MARGIN-RIGHT SIMPLEMENT UNE WIDTH POUR QUE LE RETOUR A LA LIGNE SE FASSE PLUS TOT */
+    {
+        font-size: 16px;
+        padding-right: 30px;
+    }
+}
+
+
+
+@media screen and (max-width: 768px)
+{
+    body
+    {
+        padding: 0;
+    }
+
+    #logo > img
+    {
+        margin-top: 20px;
+        margin-left: auto;
+    }
+
+    #navbar
+    {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    #nav_tabs
+    {
+        width: 100%;
+        margin-bottom: -3px; /* c'est pour permettre au border top gris de la section 1 de se superposer au border bottom bleu sur les cellules en hover */
+    }
+
+    #nav_tabs a:hover 
+    {
+        border-top: none;
+        border-bottom: 3px solid #0065FC;   
+        margin-top: 0px;
+        margin-bottom: -3px; /* C'est pour éviter que les cellules ne se déclalent vers les haut quand le curseur est dessus ("à cause" du border de 2 px en bleu) */
+    }
+
+    #nav_tabs a:focus
+    {
+        border-top: none;
+        border-bottom: 3px solid #0065FC;   
+    }
+    
+    .nav_tabs_cellules
+    {
+        width: 50%; /* j'avais mis 49.72% et c'est parfait (on le voir avec un border 1px solid black) mais il suffisait d'enlever  le border 1px solid black pour ne pas avoir les deux cellules l'une sous l'autre en 50%  */
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 3px;
+    }
+
+    #section_une
+    {
+        border-top: 3px solid #F2F2F2; /* (avant j'avais mis red pour mieux le voir et le tester) c'est la technique que j'ai trouvé seul pour permettre de le mettre au même niveau que le border bottom bleu sur les cellules en hover grâce au margin -3px sur le #nav_tabs */
+    }
+
+    #titre_section_une
+    {
+        margin-left: 20px;
+        margin-top: 40px; 
+        margin-right: 10px;
+    }
+
+    #paragraphe_section_une
+    {
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+
+    #formulaire_de_recherche
+    {
+        display: none;
+    }
+
+    #formulaire_de_recherche_2
+    {
+        display: flex;
+        width: auto; /* c'est pour éviter qu'à un certain moment lors du redimensionnement de la fenêtre du navigateur il y ait une marge à droite sur toute la page */
+        margin-left: 22px;
+    }
+
+    input
+    {
+        height: 49px;
+        border-color: rgba(0, 0, 0, 0);
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    #div_filtres
+    {
+        margin-left: 20px;
+        width: auto; /* avant il y avait max-width: 380px; */
+        height: auto;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    #div_filtres h2
+    {
+        margin-right: 0;
+    }
+
+    #filtres_flex
+    {
+        width: auto;
+    }
+
+    .filtre
+    {
+        width: 160px;
+        margin: 0 20px 15px 0; /* la margin right de  20px c'est pour qu'un retour à la ligne soit fait avant qu'elle ne touche le bord */
+    }
+
+    .filtre > i
+    {
+        padding: 16.61px 0px 16.61px 10px;
+    }
+
+    .filtre h3
+    {
+        font-size: 11px;
+    }
+
+    #information
+    {
+        margin-left: 20px;
+        margin-right: 10px; /* c'est pour le retour à la ligne pour que le texte ne soit pas trop près du bord */
+    }
+
+    #section_deux
+    {
+        flex-direction: column-reverse;
+    }
+
+    #article_hebergements_marseille
+    {
+        background-color: #FFFFFF;
+        border-radius: 0px;
+    }
+
+    #h1_hebergements_marseille
+    {
+        padding-left: 30px;
+    }
+
+    .div_ligne
+    {
+        flex-direction: column;
+        width: auto;
+    }
+
+    #div_cards
+    {
+        flex-direction: column;
+        width: 91%; /* c'est pour avoir l'equivalent des cards activités et c'est bon au niveau de l'inspecteur d'éléments */
+        margin: auto;
+    }
+
+    .card_padding
+    {
+        width: 100%;
+        padding: 0;
+        padding-bottom: 1em;
+    }
+    
+    .card
+    {
+        width: 100%;
+    }
+
+    .card img
+    {
+        width: 100%;
+    }
+
+    .card_texte h3
+    {
+        font-size: 16px;
+        width: 110px;
+    }
+
+    .card_texte p
+    {
+        font-size: 14px;
+    }
+
+    #aside_populaires
+    {
+        height: auto;
+        background-color: #F2F2F2;
+        border-radius: 0px;
+    }
+
+    #titre_article_populaires
+    {
+        width: 92%;
+    }
+                                                   
+    #div_cards_v2
+    {
+        flex-direction: column;
+        width: 91%; /* c'est pour avoir l'equivalent des cards activités et c'est bon au niveau de l'inspecteur d'éléments */
+    }
+
+    .card_padding_v2
+    {
+        padding-bottom: 1em;
+    }
+
+    .card_v2
+    {
+        width: 100%;
+    }
+
+    .card_v2_texte h3
+    {
+        font-size: 16px;
+    }
+
+    .card_v2_texte p
+    {
+        font-size: 14px;
+    }
+    
+    #div_activites
+    {
+        flex-direction: column;
+        width: auto;
+        margin: 0px 20px;
+    }
+
+    #h1_section_activites
+    {
+        margin-left: 20px;
+        margin-right: 50%; /* c'est pour avoir  un retour à la ligne à un certain moment pour que le titre aille à la ligne un peu avant les 375px pour avoir un résultat comme sur la maquette */
+        margin-bottom: 0px;
+    }
+
+    .card_v3
+    {
+        width: auto;
+        margin-top: 24px;
+    }
+
+    .card_v3 img
+    {
+        height: 150px;
+    }
+
+    .card_v3 h3
+    {
+        padding: 0px;
+    }
+
+    footer
+    {
+        width: 100%;
+        height: auto;
+    }
+
+    #div_footer_test
+    {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 30px;
+    }
+
+    #div_footer_test
+    {
+        flex-direction: column;
+    }
+
+}
+
+
